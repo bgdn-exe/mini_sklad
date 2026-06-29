@@ -1,0 +1,22 @@
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# 1C database/configuration archives
+*.dt
+*.cf
+*.cfu
+
+# External reports and processors
+*.epf
+*.erf
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
