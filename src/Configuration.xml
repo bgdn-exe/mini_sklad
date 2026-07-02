@@ -268,8 +268,11 @@
 			<CommonModule>РаботаСДоками</CommonModule>
 			<Catalog>Товары</Catalog>
 			<Catalog>Контрагенты</Catalog>
+			<Catalog>Склады</Catalog>
 			<Document>Поступление</Document>
 			<Document>Реализация</Document>
+			<Report>ОстаткиПоТоварам</Report>
+			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
