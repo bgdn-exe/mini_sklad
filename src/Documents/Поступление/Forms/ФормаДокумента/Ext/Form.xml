@@ -104,6 +104,8 @@
 				<InputField name="ТоварыСумма" id="50">
 					<DataPath>Объект.Товары.Сумма</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoWidthInTable>None</AutoWidthInTable>
+					<HorizontalStretch>false</HorizontalStretch>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТоварыСуммаКонтекстноеМеню" id="51"/>
 					<ExtendedTooltip name="ТоварыСуммаРасширеннаяПодсказка" id="52"/>
