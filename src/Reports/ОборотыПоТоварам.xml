@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
-	<Report uuid="9f656559-2ae3-45b6-a6be-20e9621de36b">
+	<Report uuid="4b48d2eb-6357-4b8e-8de3-9f8ffe8ece7f">
 		<InternalInfo>
-			<xr:GeneratedType name="ReportObject.ОстаткиПоТоварам" category="Object">
-				<xr:TypeId>57d03ce1-0282-4b84-8bcc-90716b5b2dc9</xr:TypeId>
-				<xr:ValueId>880410d3-f905-4cff-8576-588d18aee7f6</xr:ValueId>
+			<xr:GeneratedType name="ReportObject.ОборотыПоТоварам" category="Object">
+				<xr:TypeId>247177cf-760b-4b34-a96b-a409e694653c</xr:TypeId>
+				<xr:ValueId>86a122d4-9fa7-411a-af7a-0493592fd435</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ReportManager.ОстаткиПоТоварам" category="Manager">
-				<xr:TypeId>112cc5a5-8f20-40c3-9ead-246f7950576a</xr:TypeId>
-				<xr:ValueId>89158d75-2959-4c22-8902-43abbbd70517</xr:ValueId>
+			<xr:GeneratedType name="ReportManager.ОборотыПоТоварам" category="Manager">
+				<xr:TypeId>5928029c-5a05-4389-bc5b-b8a6da4ef921</xr:TypeId>
+				<xr:ValueId>13e41b34-55f7-46c7-9255-36a663a55984</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ОстаткиПоТоварам</Name>
+			<Name>ОборотыПоТоварам</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Остатки по товарам</v8:content>
+					<v8:content>Обороты по товарам</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
 			<UseStandardCommands>true</UseStandardCommands>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>Report.ОстаткиПоТоварам.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>Report.ОборотыПоТоварам.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

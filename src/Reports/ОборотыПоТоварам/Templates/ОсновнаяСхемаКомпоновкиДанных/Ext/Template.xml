@@ -7,6 +7,10 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоРасход</dataPath>
+			<field>КоличествоРасход</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>Товар</dataPath>
 			<field>Товар</field>
 			<role>
@@ -21,29 +25,45 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоОстаток</dataPath>
-			<field>КоличествоОстаток</field>
+			<dataPath>КоличествоПриход</dataPath>
+			<field>КоличествоПриход</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборот</dataPath>
+			<field>КоличествоОборот</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	ОстаткиТоваровОстатки.Склад КАК Склад,
-	ОстаткиТоваровОстатки.Товар КАК Товар,
-	ОстаткиТоваровОстатки.КоличествоОстаток КАК КоличествоОстаток
+		<query>              ВЫБРАТЬ
+	ОстаткиТоваровОбороты.Склад КАК Склад,
+	ОстаткиТоваровОбороты.Товар КАК Товар,
+	ОстаткиТоваровОбороты.КоличествоПриход КАК КоличествоПриход,
+	ОстаткиТоваровОбороты.КоличествоРасход КАК КоличествоРасход,
+	ОстаткиТоваровОбороты.КоличествоОборот КАК КоличествоОборот
 ИЗ
-	РегистрНакопления.ОстаткиТоваров.Остатки(
-    КОНЕЦПЕРИОДА(&amp;ДатаОстатков, ДЕНЬ),
-    ) КАК ОстаткиТоваровОстатки</query>
+	РегистрНакопления.ОстаткиТоваров.Обороты(
+    &amp;НачалоПериода,
+    &amp;КонецПериода,
+    ,
+    ) КАК ОстаткиТоваровОбороты</query>
 	</dataSet>
 	<totalField>
-		<dataPath>КоличествоОстаток</dataPath>
-		<expression>Сумма(КоличествоОстаток)</expression>
+		<dataPath>КоличествоПриход</dataPath>
+		<expression>Сумма(КоличествоПриход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоРасход</dataPath>
+		<expression>Сумма(КоличествоРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОборот</dataPath>
+		<expression>Сумма(КоличествоОборот)</expression>
 	</totalField>
 	<parameter>
-		<name>Период</name>
+		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Начало периода</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -56,11 +76,11 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ДатаОстатков</name>
+		<name>КонецПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Дата остатков</v8:content>
+				<v8:content>Конец периода</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -70,7 +90,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -84,23 +104,29 @@
 					<dcsset:field>Товар</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоОстаток</dcsset:field>
+					<dcsset:field>КоличествоПриход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОборот</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
-						<v8:date>2026-07-20T00:00:00</v8:date>
+						<v8:date>2026-06-01T00:00:00</v8:date>
 					</dcscor:value>
-					<dcsset:userSettingID>46ef9e84-07e1-4eae-ba33-0420edcaddd2</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Дата остатков</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2027-07-31T00:00:00</v8:date>
+					</dcscor:value>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
